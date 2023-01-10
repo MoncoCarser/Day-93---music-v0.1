@@ -1,8 +1,8 @@
 import os
-import requests, json, os
+import requests, json
 from requests.auth import HTTPBasicAuth
 
-def asking_for_songs_per_year():
+def asking_for_songs_per_year(year):
 
 #setting authenticators using Replit's secrets and guided authentication steps:
     client_id = os.environ['client_id']
@@ -20,7 +20,7 @@ def asking_for_songs_per_year():
     #artist = artist.replace(" ", "%20")
 
 #for this project we use year to get 10 top songs of that year
-    year = input("Year: ")
+  #  year = input("Year: ")
     
     url = "https://api.spotify.com/v1/search"
     headers = {"Authorization": f"Bearer {access_token}"}

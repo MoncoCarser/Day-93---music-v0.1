@@ -4,10 +4,12 @@
         
     </head>
     <body>
-        <form>
-            Year of music: <input type="text" required>
+        <form method="POST" action="/top_10_of_the_year">
+            Year of music: <input type="text" name="year" required>
             <button type="submit">Send</button>
         </form>
+
+        {{year}}
 
 
         
