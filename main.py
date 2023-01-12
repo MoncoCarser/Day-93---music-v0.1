@@ -1,5 +1,5 @@
 from music import print_song
-from flask import Flask, render_template, request
+from flask import Flask, request
 
 
 app = Flask(__name__)
@@ -27,6 +27,7 @@ def music_page():
     page = f.read()
     f.close()
     page = page.replace("{music_printout}", print_song(form["year"]))
+    page = page.replace("{year}", form["year"])
     return page
     
 

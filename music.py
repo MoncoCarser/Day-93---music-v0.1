@@ -25,21 +25,10 @@ def asking_for_songs_per_year(year):
     #for this project we use year to get 10 top songs of that year
     #  year = input("Year: ")
     
-    #offset causes web page to show different songs as same year is requested again. 
-    #BUT code like this is skipping the start of the list(?), so this is commented out for now and web page only shows the first 10 from data
-    offset = 0
-    """try:
-        offset = db[year]
-        if offset > 50:
-            db[year] = 0
-        db[year] += 10
-    except:
-        db[year] = 10"""
-    
     url = "https://api.spotify.com/v1/search"
     headers = {"Authorization": f"Bearer {access_token}"}
     #search = f"?q=artist%3A{artist}&type=track&limit=5"
-    search = f"?q=year%3A{year}&type=track&limit=10&offset={offset}"
+    search = f"?q=year%3A{year}&type=track&limit=10"
     
     full_url = f"{url}{search}"
     
